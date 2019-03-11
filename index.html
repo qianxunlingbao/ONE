@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>表单</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    .a{
+      color: red;
+    }
+    </style>
+</head>
+<body>
+	<h1>毕业生信息</h1>
+	<br/>
+	<fieldset id="testform" method="get" action="">
+        姓&nbsp;&nbsp;名：<input type="text" name="name1" autofocus="autofocus" required placeholder="请输入姓名"/><span style="color:red">*</span>
+        <br/>
+        学&nbsp;&nbsp;号：<input type="text" name="name1" autofocus="autofocus" required placeholder="请输入学号"/><span style="color:red">*</span>
+        <br/>
+        手&nbsp;&nbsp;机：<input type="text" name="name1" autofocus="autofocus" required placeholder="请输入手机号"/><span style="color:red">*</span>
+        <br/>
+        邮&nbsp;&nbsp;箱：<input type="text" name="name1" autofocus="autofocus" required placeholder="请输入邮箱地址"/><span style="color:red">*</span>
+		<legend class="a">
+			学生信息
+		</legend>
+    </fieldset>
+    <br/>
+    <fieldset id="testform" method="get" action="">
+        录取学校<input type="text" name="name1" autofocus="autofocus" required placeholder=""/>
+        <br/>
+        入学成绩<input type="text" name="name1" autofocus="autofocus" required placeholder=""/>
+        <br/>
+        入学时间<input type="text" name="name1" autofocus="autofocus" required placeholder="年/月/日"/>
+		<legend class="a">
+			录取情况
+		</legend>
+    </fieldset>
+    <br/>
+    <input type="submit" value="提交">
+</body>
+</html>
