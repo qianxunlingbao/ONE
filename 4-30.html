@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <canvas id="canvas"></canvas>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+		var width = 400;
+		var height = 250;
+		init()
+		function init(){ 
+			context.fillStyle = '#ccc';
+			context.fillRect(0,0,width,height); 
+            canvas.style.background = 'url("img/1.jpg") no-repeat center';
+			canvas.style.backgroundSize = "100% 100%";		
+			context.lineWidth = 35;
+		}
+		canvas.addEventListener('mousedown',mouseDown,false);
+		canvas.addEventListener('mousemove',mouseMove,false);
+		canvas.addEventListener('mouseup',mouseUp,false);
+        canvas.addEventListener('mouseonclick',onclick,false);
+		var drawing; 
+		var X = 0;
+		var Y = 0; 
+		function mouseDown(e){
+			 drawing = true;
+			 X = e.layerX;
+			 Y = e.layerY;
+		}
+		function mouseMove(e){
+			if(drawing){
+                var x = e.layerX;
+                var y = e.layerY;
+                context.globalCompositeOperation = "destination-out"; 
+                context.beginPath();
+                context.moveTo(X, Y);
+                context.lineTo(x, y);
+                context.closePath(); 
+                context.stroke();
+                X = x;
+                Y = y; 
+			} 
+		}
+		function mouseUp(e){
+			drawing = false;
+			var data = context.getImageData(0,0,width,height).data;
+			//console.log("图片像素信息",data); 
+			var length = data.length;
+			var k = 0;
+			for (var i = 0; i < length - 3; i += 4){
+				if (data[i] == 0 && data[i+1] == 0 && data[i+2] == 0 && data[i+3] == 0){
+					k++;
+				}
+			}
+			if(k > width*height*0.85){
+				 context.fillStyle = "red";
+				 context.fillRect(0,0,width,height);
+			}
+		}
+</script>
+</html>
