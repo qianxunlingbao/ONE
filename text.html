@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            padding:50px;
+        }
+        .container {
+            width: 600px;
+            height: 400px;
+            outline: 1px solid gray;
+            position: relative;
+            transition: font-size .8s ease, transform .8s ease;
+            overflow: hidden;
+        }
+        .container div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 600px;
+            margin-top: 300px;
+            background-color: white;
+            box-shadow: 0px 0px 30px red inset;
+            transform: translateY(0);
+            transition: transform 0.5s linear;
+            }
+        .container:hover div{
+            transform: translateY(-185px);
+        }
+        .container:hover{
+            opacity: 0.8; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/1.jpg" style="width: 600px;height: 400px">
+        <div>
+            <h1 style="color: red;margin-left: 20px;margin-top: 10px;">于文文</h1>
+            <h2 style="color: blue;margin-left: 20px;margin-top: 15px;">简介:</h2>
+            <p style="color: green;margin-left: 20px">于文文（Kelly Yu），1989年11月7日出生于中国辽宁大连，加拿大华裔歌手、演员，毕业于美国Berklee大学。
+                    2008年初，获得了美国波士顿Berklee伯克利音乐学院的奖学金；2012年9月，主演微电影《雨下吧》；2013年，出演微电影《十二星座发财梦之窈窕淑男》；2014年6月，主演电视剧《一又二分之一的夏天》；2015年获第19届全球华语榜中榜暨亚洲影响力大典亚洲影响力最具潜力创作歌手奖、ChannelIV新人王奖。2016年，发布个人迷你专辑《写一夜心跳》；[1]2017年12月，主演电影《前任3：再见前任》。2018年4月8日，演唱的歌曲《体面》获得第23届华鼎奖中国最佳电影歌曲奖。
+                    2019年4月，参演电影《重回地球》，在片中饰演嫦娥。</p>
+        </div>
+    </div>
+</body>
+</html>
